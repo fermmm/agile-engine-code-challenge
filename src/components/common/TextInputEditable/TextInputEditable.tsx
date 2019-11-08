@@ -31,8 +31,7 @@ class TextInputEditable extends Component<SimpleComponentProps, SimpleComponentS
          <div
             contentEditable
             suppressContentEditableWarning
-            onMouseUp={() => this.saveTextSelection()}
-            onKeyUp={() => this.saveTextSelection()}
+            onSelect={() => this.saveTextSelection()}
             className={styles.textInput}
          />
       );
@@ -44,11 +43,13 @@ class TextInputEditable extends Component<SimpleComponentProps, SimpleComponentS
       const selectionStartPos: number = Math.min(selection.anchorOffset, selection.focusOffset);
       const selectionFinishPos: number = Math.max(selection.anchorOffset, selection.focusOffset);
 
-      if (selectionStartPos !== this.state.selectionStartPos || selectionFinishPos !== this.state.selectionFinishPos) {
+      if (
+         selectionStartPos !== this.state.selectionStartPos || 
+         selectionFinishPos !== this.state.selectionFinishPos
+      ) {
+         this.setState({selectionStartPos, selectionFinishPos, selectionString});
          this.props.onSelectionChange(selectionString);
       }
-
-      this.setState({selectionStartPos, selectionFinishPos, selectionString});
    }
 
    replaceTextSelection(newText: string): void {
