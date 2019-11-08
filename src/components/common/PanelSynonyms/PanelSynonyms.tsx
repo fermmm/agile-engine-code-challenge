@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import Api from '../../../api/tools/request';
-import { Word } from '../../../api/types/types';
 
 // @ts-ignore
 import styles from './PanelSynonyms.scss';
@@ -20,9 +19,9 @@ class PanelSynonyms extends Component<PropsPanelSynonyms, StatePanelSynonyms> {
       synonymsFound: null
    };
 
-   componentDidUpdate(prevProps: PropsPanelSynonyms): void {
+   async componentDidUpdate(prevProps: PropsPanelSynonyms): Promise<void> {
       if (prevProps.textToSearch !== this.props.textToSearch) {
-         this.searchForSynoyms();
+         this.setState({synonymsFound: await Api.requestSynonyms(this.props.textToSearch)});
       }
    }
 
@@ -52,17 +51,6 @@ class PanelSynonyms extends Component<PropsPanelSynonyms, StatePanelSynonyms> {
             </div>
          </>
       );
-   }
-
-   async searchForSynoyms(): Promise<void> {
-      const requestResult: Word[] = await Api.request({ url: `words?ml=${this.props.textToSearch}` }) as Word[];
-      if (typeof requestResult === 'string') {
-         alert('Error: ' + requestResult);
-      }
-
-      this.setState({
-         synonymsFound: requestResult.map((x: Word) => x.word)
-      });
    }
 }
 
