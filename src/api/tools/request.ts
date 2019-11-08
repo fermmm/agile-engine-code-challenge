@@ -6,7 +6,7 @@ export default class Api {
     * Axios request wrapper with error handling.
     * @param options Axios request options, example: {url: "search/users"}
     * @param showAlertOnError Shows a native alert to the user when the request has a network error
-    * @returns When there is an error in the request returns a string resolved promise with the error text.
+    * @returns When there is an error in the request returns null, error handling is managed inside this function.
     */
    public static async request<T>(options: AxiosRequestConfig, showAlertOnError: boolean = true): Promise<T | null> {
       const client: AxiosInstance = axios.create({
