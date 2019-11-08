@@ -22,7 +22,7 @@ class MainPage extends Component<PropsMainPage, StateMainPage> {
       synonyms: null
    };
 
-   public render(): JSX.Element {
+   render(): JSX.Element {
       const { textSelected, textReplacement, synonyms }: StateMainPage  = this.state;
 
       return (

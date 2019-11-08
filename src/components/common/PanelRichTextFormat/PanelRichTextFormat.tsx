@@ -23,7 +23,7 @@ class PanelRichTextFormat extends Component<PropsPanelRichTextFormat> {
       },
    ];
 
-   public render(): JSX.Element {
+   render(): JSX.Element {
       return (
          <div className={styles.controlPanel}>
             <div className={styles.formatActions}>
