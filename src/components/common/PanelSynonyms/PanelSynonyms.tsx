@@ -35,7 +35,7 @@ class PanelSynonyms extends Component<PropsPanelSynonyms, StatePanelSynonyms> {
             <h1>Synonyms of the text selected:</h1>
             <div className={styles.resultsContainer}>
                {
-                  (synonymsFound && synonymsFound !== []) ?
+                  (synonymsFound && synonymsFound.length > 0) ?
                      synonymsFound.map((word, i) =>
                         <button
                            onClick={() => onSynonymClick(word)}
