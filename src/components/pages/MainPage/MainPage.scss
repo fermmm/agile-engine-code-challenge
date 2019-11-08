@@ -1,0 +1,13 @@
+.mainPageContainer {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+
+   .textEditorContainer {
+      padding: 12px;
+   }
+
+   .panelSynonymsContainer {
+      padding: 12px; 
+   }
+}

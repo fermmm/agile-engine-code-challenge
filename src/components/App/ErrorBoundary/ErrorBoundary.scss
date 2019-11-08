@@ -1,0 +1,41 @@
+$gutterLarge: 28px;
+$gutterBig: 21px;
+$gutter: 14px;
+$gutterSmall: 7px;
+$gutterTiny: 5px;
+$gray-light: #e7e7e7;
+$gray-dim: #777;
+$red-base: #e34848;
+
+.container {
+    max-width: 980px;
+    margin: $gutter auto;
+    padding: $gutterLarge;
+    background: white;
+
+    .head {
+        display: flex;
+        align-items: center;
+        padding-bottom: $gutter;
+        border-bottom: 2px solid $gray-light;
+
+        .message {
+            flex: 1;
+            font-size: 2em;
+            margin-right: $gutterBig;
+        }
+    }
+
+    .error {
+        background: lighten($red-base, 38%);
+        border-left: 5px solid $red-base;
+        color: $red-base;
+        font-size: 1.4em;
+        padding: $gutter;
+        margin: $gutterBig 0;
+    }
+
+    .trace {
+        color: $gray-dim;
+    }
+}
