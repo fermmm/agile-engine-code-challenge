@@ -1,28 +1,28 @@
 import React, { Component, RefObject } from 'react';
 import { hot } from 'react-hot-loader';
 // @ts-ignore
-import styles from './TextInputEditable.scss';
+import styles from './RichTextInput.scss';
 
-export interface SimpleComponentProps { 
+export interface PropsRichTextInput { 
    textReplacement: string;
    onSelectionChange(selectedText: string): void;
 }
-export interface SimpleComponentState { 
+export interface StateRichTextInput { 
    selectionStartPos: number;
    selectionFinishPos: number;
    selectionString: string;
 }
 
-class TextInputEditable extends Component<SimpleComponentProps, SimpleComponentState> {
-   state: SimpleComponentState = {
+class RichTextInput extends Component<PropsRichTextInput, StateRichTextInput> {
+   state: StateRichTextInput = {
       selectionStartPos: null,
       selectionFinishPos: null,
       selectionString: null,
    };
 
-   componentDidUpdate(prevProps: SimpleComponentProps): void {
+   componentDidUpdate(prevProps: PropsRichTextInput): void {
       if (prevProps.textReplacement !== this.props.textReplacement) {
-         this.replaceTextSelection(this.props.textReplacement);
+         this.replaceSelectedText(this.props.textReplacement);
       }
    }
 
@@ -52,9 +52,9 @@ class TextInputEditable extends Component<SimpleComponentProps, SimpleComponentS
       }
    }
 
-   replaceTextSelection(newText: string): void {
+   replaceSelectedText(newText: string): void {
       document.execCommand('insertText', false, newText);
    }
 }
 
-export default hot(module)(TextInputEditable);
+export default hot(module)(RichTextInput);

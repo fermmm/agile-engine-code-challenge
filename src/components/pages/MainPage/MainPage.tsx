@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import TextInputEditable from '../../common/TextInputEditable/TextInputEditable';
+import RichTextInput from '../../common/RichTextInput/RichTextInput';
 import PanelTextFormatting from '../../common/PanelTextFormatting/PanelTextFormatting';
 import PanelSynonyms from '../../common/PanelSynonyms/PanelSynonyms';
 
@@ -28,7 +28,7 @@ class MainPage extends Component<PropsMainPage, StateMainPage> {
                <PanelTextFormatting 
                   textSelected={textSelected}
                />
-               <TextInputEditable 
+               <RichTextInput 
                   textReplacement={textReplacement}
                   onSelectionChange={(t) => this.setState({textSelected: t})}
                />

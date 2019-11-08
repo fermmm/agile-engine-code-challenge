@@ -3,12 +3,7 @@ import { hot } from 'react-hot-loader';
 import { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 import MainPage from '../pages/MainPage/MainPage';
 
-export interface AppProps { }
-export interface AppState { }
-
-class App extends React.Component<AppProps> {
-   public static history: History;
-
+class App extends React.Component {
    componentDidMount(): void {
       document.title = 'Agile Engine challenge - Fernando Medina';
    }

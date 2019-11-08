@@ -7,6 +7,7 @@ export interface PropsPanelTextFormatting {
    textSelected: string;
 }
 export interface StatePanelTextFormatting { }
+
 class PanelTextFormatting extends Component<PropsPanelTextFormatting, StatePanelTextFormatting> {
    commandsButtons: FormatCommand[] = [
       {
