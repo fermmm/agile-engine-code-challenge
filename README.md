@@ -3,7 +3,7 @@
 ## Important notes (Please read):
 
 * I have experience with Redux but the challenge doesn't have Redux because is not needed, using something when is not needed is a wrong desition in my opninion, so I decided to not add Redux to show this. You can see how I use Redux in the components of [this repository.](https://github.com/fermmm/boilerplate-typescript-react-redux-webpack)
-* I have experience with hooks and I like them, but I didn't use them in this challenge because I noticed in the code skeletons you provided are not used eather. I don't want to be negatively qualified for using something other than what you consider the best practice.
+* I have experience with hooks and I like them, but I didn't use them in this challenge because I noticed in the code skeletons you provided are not used eather. Maybe you don't like them.
 * I'm using Typescript in this challenge because I consider it a best practice but It's ok for me to work with plain JS if the team does't like Typescript. 
 * I could have used Draft.js library, but I think it's not allowed in the challenge, so I didn't use it.
 
