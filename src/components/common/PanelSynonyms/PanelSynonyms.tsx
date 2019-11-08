@@ -32,7 +32,7 @@ class PanelSynonyms extends Component<PropsPanelSynonyms, StatePanelSynonyms> {
 
       return (
          <>
-            <h1>Synonyms of the text selected:</h1>
+            <h2>Selected text synonyms:</h2>
             <div className={styles.resultsContainer}>
                {
                   (synonymsFound && synonymsFound.length > 0) ?
