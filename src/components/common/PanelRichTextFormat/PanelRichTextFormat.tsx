@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 // @ts-ignore
-import styles from './PanelTextFormatting.scss';
+import styles from './PanelRichTextFormat.scss';
 
-export interface PropsPanelTextFormatting {
+export interface PropsPanelRichTextFormat {
    textSelected: string;
 }
-export interface StatePanelTextFormatting { }
 
-class PanelTextFormatting extends Component<PropsPanelTextFormatting, StatePanelTextFormatting> {
+class PanelRichTextFormat extends Component<PropsPanelRichTextFormat> {
    commandsButtons: FormatCommand[] = [
       {
          command: 'bold',
@@ -59,4 +58,4 @@ interface FormatCommand {
    buttonContent: JSX.Element | string;
 }
 
-export default hot(module)(PanelTextFormatting);
+export default hot(module)(PanelRichTextFormat);

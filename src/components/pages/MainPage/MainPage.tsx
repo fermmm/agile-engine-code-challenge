@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import RichTextInput from '../../common/RichTextInput/RichTextInput';
-import PanelTextFormatting from '../../common/PanelTextFormatting/PanelTextFormatting';
+import PanelRichTextFormat from '../../common/PanelRichTextFormat/PanelRichTextFormat';
 import PanelSynonyms from '../../common/PanelSynonyms/PanelSynonyms';
 
 // @ts-ignore
@@ -25,7 +25,7 @@ class MainPage extends Component<PropsMainPage, StateMainPage> {
       return (
          <div className={styles.mainPageContainer}>
             <div className={styles.textEditorContainer}>
-               <PanelTextFormatting 
+               <PanelRichTextFormat 
                   textSelected={textSelected}
                />
                <RichTextInput 
